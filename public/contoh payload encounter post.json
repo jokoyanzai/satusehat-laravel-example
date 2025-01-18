@@ -1,0 +1,98 @@
+{
+  "resourceType": "Encounter",
+  "identifier": [
+    {
+      "system": "http:\/\/sys-ids.kemkes.go.id\/encounter\/45caf716-dcbb-4829-b6d8-1fca6a22490a",
+      "value": "43db8143-6a56-482b-9dad-391a3ea63d27"
+    },
+    {
+      "system": "http:\/\/sys-ids.kemkes.go.id\/encounter\/45caf716-dcbb-4829-b6d8-1fca6a22490a",
+      "value": "123456789"
+    }
+  ],
+  "statusHistory": [
+    {
+      "status": "arrived",
+      "period": {
+        "start": "2024-11-16T08:11:09+07:00",
+        "end": "2024-11-16T08:21:09+07:00"
+      }
+    },
+    {
+      "status": "in-progress",
+      "period": {
+        "start": "2024-11-16T08:21:09+07:00",
+        "end": "2024-11-16T08:26:09+07:00"
+      }
+    },
+    {
+      "status": "finished",
+      "period": {
+        "start": "2024-11-16T08:26:09+07:00",
+        "end": "2024-11-16T08:26:09+07:00"
+      }
+    }
+  ],
+  "status": "finished",
+  "period": {
+    "start": "2024-11-16T08:11:09+07:00",
+    "end": "2024-11-16T08:26:09+07:00"
+  },
+  "class": {
+    "code": "AMB",
+    "display": "ambulatory",
+    "system": "http:\/\/terminology.hl7.org\/CodeSystem\/v3-ActCode"
+  },
+  "subject": {
+    "reference": "Patient\/P02478375538",
+    "display": "Ardianto Putra"
+  },
+  "participant": [
+    {
+      "individual": {
+        "reference": "Practitioner\/10009880728",
+        "display": "dr. Alexander"
+      },
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "http:\/\/terminology.hl7.org\/CodeSystem\/v3-ParticipationType",
+              "code": "ATND",
+              "display": "attender"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "location": [
+    {
+      "location": {
+        "reference": "Location\/b017aa54-f1df-4ec2-9d84-8823815d7228",
+        "display": "Ruang Poli A1 entah di mana"
+      }
+    }
+  ],
+  "diagnosis": [
+    {
+      "condition": {
+        "reference": "Condition\/e05fbc06-edcf-45a7-a230-11bd39b67e0d",
+        "display": "Typhoid and paratyphoid fevers"
+      },
+      "use": {
+        "coding": [
+          {
+            "system": "http:\/\/terminology.hl7.org\/CodeSystem\/diagnosis-role",
+            "code": "DD",
+            "display": "Discharge diagnosis"
+          }
+        ]
+      },
+      "rank": 1
+    }
+  ],
+  "serviceProvider": {
+    "reference": "Organization\/45caf716-dcbb-4829-b6d8-1fca6a22490a"
+  }
+}

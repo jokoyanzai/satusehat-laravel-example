@@ -58,19 +58,19 @@ class FhirController extends Controller
 
         $encounter->setArrived(Carbon::now()->subMinutes(15)->toDateTimeString());
         $encounter->setInProgress(Carbon::now()->subMinutes(5)->toDateTimeString(), Carbon::now()->toDateTimeString());
-        $encounter->setFinished(Carbon::now()->toDateTimeString());
+        // $encounter->setFinished(Carbon::now()->toDateTimeString());
 
-        $encounter->addRegistrationId('123456789'); // unique string free text (increments / UUID)
+        $encounter->addRegistrationId('1234567890'); // unique string free text (increments / UUID)
         $encounter->setConsultationMethod('RAJAL'); // RAJAL, IGD, RANAP, HOMECARE, TELEKONSULTASI
-        $encounter->setSubject('P12312312123', 'TESTER'); // ID SATUSEHAT Pasien dan Nama SATUSEHAT
-        $encounter->addParticipant('102938712983', 'dr. X'); // ID SATUSEHAT Dokter, Nama Dokter
-        $encounter->addLocation('A1-001', 'Ruang Poli A1'); // ID SATUSEHAT Location, Nama Poli
-        $encounter->addDiagnosis(Str::uuid()->toString(), 'J06.9'); // ID SATUSEHAT Condition, Kode ICD10
-        $encounter = $encounter->json();
+        $encounter->setSubject('P02478375538', 'Ardianto Putra'); // ID SATUSEHAT Pasien dan Nama SATUSEHAT
+        $encounter->addParticipant('10009880728', 'dr. Alexander'); // ID SATUSEHAT Dokter, Nama Dokter
+        $encounter->addLocation('b017aa54-f1df-4ec2-9d84-8823815d7228', 'Ruang Poli A1'); // ID SATUSEHAT Location, Nama Poli
+        // $encounter->addDiagnosis(Str::uuid()->toString(), 'J06.9'); // ID SATUSEHAT Condition, Kode ICD10
+        // $encounter = $encounter->json();
 
-        // // Contoh POST
-        // [$encounter, $res] = $encounter->post();
-        // $encounter = json_encode($res, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+        // Contoh POST
+        [$encounter, $res] = $encounter->post();
+        $encounter = json_encode($res, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
 
         return view('fhirdemo', compact('encounter'));
     }
